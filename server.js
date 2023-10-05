@@ -25,6 +25,9 @@ io.on("connection", (socket)=>{
     socket.on('Shubha Om Company Pvt.Ltd', (message)=>{
         io.emit('Shubha Om Company Pvt.Ltd', message)
     })
+    socket.on('Y2K', (message)=>{
+        io.emit('Shubha Om Company Pvt.Ltd', message)
+    })
 })
 
 
