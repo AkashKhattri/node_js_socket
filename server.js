@@ -10,7 +10,10 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
     cors: {
-        origin: "*",
+        origin: [
+		"https://testhms.tuna-erp.com:*",
+		"https://demo.tunahms.com:*"
+	],
         methods: ["GET", "POST"],
     },
 });
@@ -27,6 +30,9 @@ io.on("connection", (socket)=>{
     })
     socket.on('Y2K', (message)=>{
         io.emit('Y2K', message)
+    })
+    socket.on('Tuna Technology_table_refresh', (message)=>{
+        io.emit('Tuna Technology_table_refresh', message)
     })
 })
 
