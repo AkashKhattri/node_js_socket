@@ -11,8 +11,8 @@ const server = http.createServer(app)
 const io = new Server(server, {
     cors: {
         origin: [
-		"https://testhms.tuna-erp.com:*",
-		"https://demo.tunahms.com:*"
+		"https://yourdomain1.com:*",
+		"https://yourdomain2.com:*"
 	],
         methods: ["GET", "POST"],
     },
@@ -21,18 +21,12 @@ const io = new Server(server, {
 io.on("connection", (socket)=>{
     console.log(`User Connected: ${socket.id}`);
 
-    socket.on('Tuna Technology', (message)=>{
-        io.emit('Tuna Technology', message)
+    socket.on('Channel 1', (message)=>{
+        io.emit('Channel 1', message)
     })
 
-    socket.on('Shubha Om Company Pvt.Ltd', (message)=>{
-        io.emit('Shubha Om Company Pvt.Ltd', message)
-    })
-    socket.on('Y2K', (message)=>{
-        io.emit('Y2K', message)
-    })
-    socket.on('Tuna Technology_table_refresh', (message)=>{
-        io.emit('Tuna Technology_table_refresh', message)
+    socket.on('Channel 2', (message)=>{
+        io.emit('Channel 2', message)
     })
 })
 
